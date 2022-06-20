@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { useTheme } from "@mui/material/styles";
 import PropTypes from "prop-types";
+import Link from "next/link";
 import MuiButton from "../components/Button";
 
 const CurriculumSection = ({ curriculumRef }) => {
@@ -54,6 +55,8 @@ const CurriculumSection = ({ curriculumRef }) => {
           similar age, because we are driven by the motive to provide an
           individual approach to all of them.
         </Typography>
+        <Link href="https://api.whatsapp.com/send?phone=254740248823" passHref>
+                <a target="_blank">
         <Box sx={{ marginTop: theme.spacing(4) }}>
           <MuiButton
             size="large"
@@ -65,6 +68,8 @@ const CurriculumSection = ({ curriculumRef }) => {
             }}
           />
         </Box>
+        </a>
+        </Link>
       </Box>
     </Grid>
   );

@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { useTheme } from "@mui/material/styles";
 import PropTypes from "prop-types";
+import Link from "next/link";
 import MuiButton from "./Button";
 
 const CourseCard = ({
@@ -56,6 +57,8 @@ const CourseCard = ({
           {messageBody}
         </Typography>
       </Box>
+      <Link href="https://api.whatsapp.com/send?phone=254740248823" passHref>
+                <a target="_blank">
       <Box sx={{ width: "100%" }}>
         <MuiButton
           size="medium"
@@ -68,6 +71,8 @@ const CourseCard = ({
           }}
         />
       </Box>
+      </a>
+      </Link>
     </Grid>
   );
 };

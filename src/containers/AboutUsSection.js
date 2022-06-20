@@ -5,6 +5,7 @@ import Grid from "@mui/material/Grid";
 import { useTheme } from "@mui/material/styles";
 import PropTypes from "prop-types";
 import { nanoid } from "nanoid";
+import Link from "next/link";
 import MuiButton from "../components/Button";
 
 const AboutUsSection = ({ isMobileTablet, aboutRef }) => {
@@ -285,9 +286,13 @@ const AboutUsSection = ({ isMobileTablet, aboutRef }) => {
           </>
         )}
       </Box>
+      <Link href="https://api.whatsapp.com/send?phone=254740248823" passHref>
+                <a target="_blank">
       <Box sx={{ paddingTop: theme.spacing(6) }}>
         <MuiButton size="large" variant="contained" text="SCHEDULE A DEMO" />
       </Box>
+      </a>
+      </Link>
     </Grid>
   );
 };

@@ -6,6 +6,7 @@ import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import IconButton from "@mui/material/IconButton";
 import { useTheme } from "@mui/material/styles";
 import PropTypes from "prop-types";
+import Link from "next/link";
 import MuiButton from "../components/Button";
 
 const HeroSection = ({ isLargeScreen, isMobileTablet, heroRef, aboutRef }) => {
@@ -79,6 +80,8 @@ const HeroSection = ({ isLargeScreen, isMobileTablet, heroRef, aboutRef }) => {
             logical and analytical thinking, while learning the foundations of
             programming!
           </Typography>
+          <Link href="https://api.whatsapp.com/send?phone=254740248823" passHref>
+                <a target="_blank">
           <Box sx={{ paddingTop: theme.spacing(4) }}>
             <MuiButton
               size="large"
@@ -86,6 +89,8 @@ const HeroSection = ({ isLargeScreen, isMobileTablet, heroRef, aboutRef }) => {
               text="SCHEDULE A DEMO"
             />
           </Box>
+          </a>
+          </Link>
           <Grid
             container
             direction="row"

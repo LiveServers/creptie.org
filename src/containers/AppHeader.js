@@ -7,7 +7,6 @@ import Grid from "@mui/material/Grid";
 import { useTheme } from "@mui/material/styles";
 import MenuIcon from "@mui/icons-material/Menu";
 import PropTypes from "prop-types";
-// import { useRouter } from "next/router";
 import {
   Divider,
   Drawer,
@@ -18,6 +17,7 @@ import {
 } from "@mui/material";
 import { nanoid } from "nanoid";
 import IconButton from "@mui/material/IconButton";
+import Link from "next/link";
 import MuiButton from "../components/Button";
 
 export default function AppHeader({
@@ -100,9 +100,13 @@ export default function AppHeader({
           </ListItem>
         ))}
       </List>
+      <Link href="https://api.whatsapp.com/send?phone=254740248823" passHref>
+                <a target="_blank">
       <Box>
         <MuiButton variant="contained" text="SCHEDULE A DEMO" height={36} />
       </Box>
+      </a>
+      </Link>
     </Box>
   );
   const container = win !== undefined ? () => win().document.body : undefined;
@@ -212,6 +216,8 @@ export default function AppHeader({
                     </Typography>
                   </Grid>
                 </Box>
+                <Link href="https://api.whatsapp.com/send?phone=254740248823" passHref>
+                <a target="_blank">
                 <Box>
                   <MuiButton
                     variant="contained"
@@ -219,6 +225,8 @@ export default function AppHeader({
                     height={36}
                   />
                 </Box>
+                </a>
+                </Link>
               </>
             )}
             {isMobileTablet && (
