@@ -13,13 +13,16 @@ import TestimonialsSection from "../containers/TestimonialsSection";
 import ContactSection from "../containers/ContactSection";
 import FooterSection from "../containers/FooterSection";
 
-const Home = ({ isMobileTablet, isLargeScreen }) => {
-  const heroRef = React.useRef(null);
-  const aboutRef = React.useRef(null);
-  const curriculumRef = React.useRef(null);
-  const coursesRef = React.useRef(null);
-  const teamRef = React.useRef(null);
-  const contactRef = React.useRef(null);
+const Home = ({
+  isMobileTablet,
+  isLargeScreen,
+  contactRef,
+  aboutRef,
+  curriculumRef,
+  coursesRef,
+  teamRef,
+  heroRef,
+}) => {
   return (
     <MainLayout isMobileTablet={isMobileTablet} heroRef={heroRef}>
       <AppHeader
@@ -44,7 +47,14 @@ const Home = ({ isMobileTablet, isLargeScreen }) => {
       <TeamSection teamRef={teamRef} isMobileTablet={isMobileTablet} />
       <TestimonialsSection />
       <ContactSection contactRef={contactRef} isMobileTablet={isMobileTablet} />
-      <FooterSection isMobileTablet={isMobileTablet} />
+      <FooterSection
+        contactRef={contactRef}
+        isMobileTablet={isMobileTablet}
+        aboutRef={aboutRef}
+        curriculumRef={curriculumRef}
+        coursesRef={coursesRef}
+        teamRef={teamRef}
+      />
     </MainLayout>
   );
 };

@@ -58,20 +58,20 @@ const CourseCard = ({
         </Typography>
       </Box>
       <Link href="https://api.whatsapp.com/send?phone=254740248823" passHref>
-                <a target="_blank">
-      <Box sx={{ width: "100%" }}>
-        <MuiButton
-          size="medium"
-          variant="contained"
-          text={buttonText}
-          sx={{
-            color,
-            backgroundColor: background,
-            width: "100%",
-          }}
-        />
-      </Box>
-      </a>
+        <a style={{ width: "100%" }} target="_blank">
+          <Box sx={{ width: "100%" }}>
+            <MuiButton
+              size="medium"
+              variant="contained"
+              text={buttonText}
+              sx={{
+                color,
+                backgroundColor: background,
+                width: "100%",
+              }}
+            />
+          </Box>
+        </a>
       </Link>
     </Grid>
   );

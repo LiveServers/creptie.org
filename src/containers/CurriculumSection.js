@@ -56,19 +56,19 @@ const CurriculumSection = ({ curriculumRef }) => {
           individual approach to all of them.
         </Typography>
         <Link href="https://api.whatsapp.com/send?phone=254740248823" passHref>
-                <a target="_blank">
-        <Box sx={{ marginTop: theme.spacing(4) }}>
-          <MuiButton
-            size="large"
-            variant="contained"
-            text="ENROLL NOW"
-            sx={{
-              color: theme.palette.grey[900],
-              backgroundColor: theme.palette.grey[0],
-            }}
-          />
-        </Box>
-        </a>
+          <a target="_blank">
+            <Box sx={{ marginTop: theme.spacing(4) }}>
+              <MuiButton
+                size="large"
+                variant="contained"
+                text="ENROLL NOW"
+                sx={{
+                  color: theme.palette.grey[900],
+                  backgroundColor: theme.palette.grey[0],
+                }}
+              />
+            </Box>
+          </a>
         </Link>
       </Box>
     </Grid>

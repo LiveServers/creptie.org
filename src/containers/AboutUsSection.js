@@ -287,11 +287,15 @@ const AboutUsSection = ({ isMobileTablet, aboutRef }) => {
         )}
       </Box>
       <Link href="https://api.whatsapp.com/send?phone=254740248823" passHref>
-                <a target="_blank">
-      <Box sx={{ paddingTop: theme.spacing(6) }}>
-        <MuiButton size="large" variant="contained" text="SCHEDULE A DEMO" />
-      </Box>
-      </a>
+        <a target="_blank">
+          <Box sx={{ paddingTop: theme.spacing(6) }}>
+            <MuiButton
+              size="large"
+              variant="contained"
+              text="SCHEDULE A DEMO"
+            />
+          </Box>
+        </a>
       </Link>
     </Grid>
   );

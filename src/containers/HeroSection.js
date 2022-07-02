@@ -80,16 +80,23 @@ const HeroSection = ({ isLargeScreen, isMobileTablet, heroRef, aboutRef }) => {
             logical and analytical thinking, while learning the foundations of
             programming!
           </Typography>
-          <Link href="https://api.whatsapp.com/send?phone=254740248823" passHref>
-                <a target="_blank">
-          <Box sx={{ paddingTop: theme.spacing(4) }}>
-            <MuiButton
-              size="large"
-              variant="contained"
-              text="SCHEDULE A DEMO"
-            />
-          </Box>
-          </a>
+          <Link
+            href="https://api.whatsapp.com/send?phone=254740248823"
+            passHref
+          >
+            <a target="_blank">
+              <Box sx={{ paddingTop: theme.spacing(4) }}>
+                <MuiButton
+                  size="large"
+                  variant="contained"
+                  text="SCHEDULE A DEMO"
+                  sx={{
+                    color: theme.palette.grey[0],
+                    backgroundColor: theme.palette.secondary.main,
+                  }}
+                />
+              </Box>
+            </a>
           </Link>
           <Grid
             container

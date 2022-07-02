@@ -7,21 +7,21 @@ import { useTheme } from "@mui/material/styles";
 
 const MainLayout = ({ children, isMobileTablet, heroRef }) => {
   const theme = useTheme();
-  // const [show, setShow] = React.useState(false);
-  // const [offset, setOffset] = React.useState(0);
-  // React.useEffect(() => {
-  //   console.log("Y1", document.documentElement.scrollTop);
-  //   const onScroll = () => {
-  //     if (window.pageYOffset > 1) {
-  //       setShow(true);
-  //     } else {
-  //       setShow(false);
-  //     }
-  //   };
-  //   window.addEventListener("scroll", onScroll, true);
-  //   return () => window.removeEventListener("scroll", onScroll);
-  // }, []);
-  // console.log(offset);
+  const [show, setShow] = React.useState(false);
+  React.useEffect(() => {
+    const onScroll = () => {
+      const scrollTotal =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      if (document.documentElement.scrollTop / scrollTotal > 0.45) {
+        setShow(true);
+      } else {
+        setShow(false);
+      }
+    };
+    document.addEventListener("scroll", onScroll, true);
+    return () => document.removeEventListener("scroll", onScroll, true);
+  }, []);
   return (
     <>
       <Grid
@@ -32,28 +32,28 @@ const MainLayout = ({ children, isMobileTablet, heroRef }) => {
         justifyContent="flex-start"
         sx={{
           width: "100%",
-          overflowX: "hidden",
           backgroundColor: theme.palette.grey[0],
           height: "100vh",
         }}
       >
-        {/* {show && ( */}
-        <IconButton
-          sx={{
-            position: "fixed",
-            bottom: "10px",
-            right: isMobileTablet ? "10px" : "30px",
-            zIndex: 1000,
-            backgroundColor: theme.palette.primary.main,
-          }}
-          onClick={() => {
-            heroRef.current.scrollIntoView({
-              behavior: "smooth",
-            });
-          }}
-        >
-          <KeyboardArrowUpIcon sx={{ color: "black" }} />
-        </IconButton>
+        {show && (
+          <IconButton
+            sx={{
+              position: "fixed",
+              bottom: "10px",
+              right: isMobileTablet ? "10px" : "30px",
+              zIndex: 1000,
+              backgroundColor: theme.palette.primary.main,
+            }}
+            onClick={() => {
+              heroRef.current.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+          >
+            <KeyboardArrowUpIcon sx={{ color: "black" }} />
+          </IconButton>
+        )}
         {children}
       </Grid>
     </>

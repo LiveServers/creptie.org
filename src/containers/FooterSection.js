@@ -4,11 +4,19 @@ import PropTypes from "prop-types";
 import { useTheme } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import TwitterIcon from "@mui/icons-material/Twitter";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import Link from "next/link";
 
-const FooterSection = ({ isMobileTablet }) => {
+const FooterSection = ({
+  contactRef,
+  isMobileTablet,
+  aboutRef,
+  curriculumRef,
+  coursesRef,
+  teamRef,
+}) => {
   const theme = useTheme();
   return (
     <Grid
@@ -47,36 +55,53 @@ const FooterSection = ({ isMobileTablet }) => {
         <Typography
           sx={{ cursor: "pointer", color: theme.palette.grey[0] }}
           variant="subtitle2"
+          onClick={() =>
+            aboutRef.current.scrollIntoView({ behavior: "smooth" })
+          }
         >
           About Us
         </Typography>
         <Typography
           sx={{ cursor: "pointer", color: theme.palette.grey[0] }}
           variant="subtitle2"
+          onClick={() =>
+            curriculumRef.current.scrollIntoView({ behavior: "smooth" })
+          }
         >
           Curriculum
         </Typography>
         <Typography
           sx={{ cursor: "pointer", color: theme.palette.grey[0] }}
           variant="subtitle2"
+          onClick={() =>
+            coursesRef.current.scrollIntoView({ behavior: "smooth" })
+          }
         >
           Our Products & Courses
         </Typography>
         <Typography
           sx={{ cursor: "pointer", color: theme.palette.grey[0] }}
           variant="subtitle2"
+          onClick={() => teamRef.current.scrollIntoView({ behavior: "smooth" })}
         >
           Our Team
         </Typography>
+        <Link href="/gallery" prefetch={false}>
+          <a>
+            <Typography
+              sx={{ cursor: "pointer", color: theme.palette.grey[0] }}
+              variant="subtitle2"
+            >
+              Gallery
+            </Typography>
+          </a>
+        </Link>
         <Typography
           sx={{ cursor: "pointer", color: theme.palette.grey[0] }}
           variant="subtitle2"
-        >
-          Gallery
-        </Typography>
-        <Typography
-          sx={{ cursor: "pointer", color: theme.palette.grey[0] }}
-          variant="subtitle2"
+          onClick={() =>
+            contactRef.current.scrollIntoView({ behavior: "smooth" })
+          }
         >
           Contact Us
         </Typography>
@@ -112,19 +137,41 @@ const FooterSection = ({ isMobileTablet }) => {
           alignItems="center"
           justifyContent="center"
         >
-          <WhatsAppIcon
-            sx={{ color: "#fff", marginRight: "5px" }}
-            fontSize="small"
-          />
-          <TwitterIcon
-            sx={{ color: "#fff", marginRight: "5px" }}
-            fontSize="small"
-          />
-          <FacebookIcon
-            sx={{ color: "#fff", marginRight: "5px" }}
-            fontSize="small"
-          />
-          <InstagramIcon sx={{ color: "#fff" }} fontSize="small" />
+          <Link
+            href="https://api.whatsapp.com/send?phone=254740248823"
+            passHref
+          >
+            <a target="_blank">
+              <WhatsAppIcon
+                sx={{ color: "#fff", marginRight: "5px" }}
+                fontSize="small"
+              />
+            </a>
+          </Link>
+          <Link href="#" passHref>
+            <a target="_blank">
+              <FacebookIcon
+                sx={{ color: "#fff", marginRight: "5px" }}
+                fontSize="small"
+              />
+            </a>
+          </Link>
+          <Link href="https://www.linkedin.com/company/creptieschool/" passHref>
+            <a target="_blank">
+              <LinkedInIcon
+                sx={{ color: "#fff", marginRight: "5px" }}
+                fontSize="small"
+              />
+            </a>
+          </Link>
+          <Link
+            href="https://instagram.com/creptie_school?igshid=YmMyMTA2M2Y="
+            passHref
+          >
+            <a target="_blank">
+              <InstagramIcon sx={{ color: "#fff" }} fontSize="small" />
+            </a>
+          </Link>
         </Grid>
       </Grid>
     </Grid>
@@ -134,5 +181,10 @@ const FooterSection = ({ isMobileTablet }) => {
 export default FooterSection;
 
 FooterSection.propTypes = {
+  contactRef: PropTypes.object.isRequired,
   isMobileTablet: PropTypes.bool.isRequired,
+  aboutRef: PropTypes.object.isRequired,
+  curriculumRef: PropTypes.object.isRequired,
+  coursesRef: PropTypes.object.isRequired,
+  teamRef: PropTypes.object.isRequired,
 };

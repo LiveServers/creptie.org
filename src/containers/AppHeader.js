@@ -15,9 +15,9 @@ import {
   ListItemButton,
   ListItemText,
 } from "@mui/material";
-import { nanoid } from "nanoid";
 import IconButton from "@mui/material/IconButton";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import MuiButton from "../components/Button";
 
 export default function AppHeader({
@@ -28,52 +28,15 @@ export default function AppHeader({
   curriculumRef,
   coursesRef,
   teamRef,
+  pathname = "",
 }) {
   const theme = useTheme();
+  const router = useRouter();
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-  const navItems = [
-    {
-      item: "About Us",
-    },
-    {
-      item: "Our Curriculum",
-    },
-    {
-      item: "Our Products & Courses",
-    },
-    {
-      item: "Our Team",
-    },
-    {
-      item: "Gallery",
-    },
-    {
-      item: "Contact Us",
-    },
-  ];
-  function handleMobileScroll(val) {
-    return {
-      "Contact Us": contactRef.current.scrollIntoView({
-        behavior: "smooth",
-      }),
-      "About Us": aboutRef.current.scrollIntoView({
-        behavior: "smooth",
-      }),
-      "Our Curriculum": curriculumRef.current.scrollIntoView({
-        behavior: "smooth",
-      }),
-      "Our Products & Courses": coursesRef.current.scrollIntoView({
-        behavior: "smooth",
-      }),
-      "Our Team": teamRef.current.scrollIntoView({
-        behavior: "smooth",
-      }),
-    }[val];
-  }
   const drawer = (
     <Box sx={{ textAlign: "center" }}>
       <Typography
@@ -85,27 +48,107 @@ export default function AppHeader({
       </Typography>
       <Divider />
       <List>
-        {navItems.map(({ item }) => (
-          <ListItem
-            onClick={() => {
-              handleDrawerToggle();
-              handleMobileScroll(item);
-            }}
-            key={nanoid()}
-            disablePadding
-          >
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        <ListItem
+          onClick={() => {
+            if (pathname === "/gallery") {
+              router.push("/");
+              return false;
+            }
+            aboutRef.current.scrollIntoView({
+              behavior: "smooth",
+            });
+            handleDrawerToggle();
+          }}
+          disablePadding
+        >
+          <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemText primary="About Us" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem
+          onClick={() => {
+            if (pathname === "/gallery") {
+              router.push("/");
+              return false;
+            }
+            curriculumRef.current.scrollIntoView({
+              behavior: "smooth",
+            });
+            handleDrawerToggle();
+          }}
+          disablePadding
+        >
+          <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemText primary="Our Curriculum" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem
+          onClick={() => {
+            if (pathname === "/gallery") {
+              router.push("/");
+              return false;
+            }
+            coursesRef.current.scrollIntoView({
+              behavior: "smooth",
+            });
+            handleDrawerToggle();
+          }}
+          disablePadding
+        >
+          <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemText primary="Our Products & Courses" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem
+          onClick={() => {
+            if (pathname === "/gallery") {
+              router.push("/");
+              return false;
+            }
+            teamRef.current.scrollIntoView({
+              behavior: "smooth",
+            });
+            handleDrawerToggle();
+          }}
+          disablePadding
+        >
+          <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemText primary="Our Team" />
+          </ListItemButton>
+        </ListItem>
+        <Link href="/gallery">
+          <a>
+            <ListItem disablePadding>
+              <ListItemButton sx={{ textAlign: "center" }}>
+                <ListItemText primary="Gallery" />
+              </ListItemButton>
+            </ListItem>
+          </a>
+        </Link>
+        <ListItem
+          onClick={() => {
+            if (pathname === "/gallery") {
+              router.push("/");
+              return false;
+            }
+            contactRef.current.scrollIntoView({
+              behavior: "smooth",
+            });
+            handleDrawerToggle();
+          }}
+          disablePadding
+        >
+          <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemText primary="Contact Us" />
+          </ListItemButton>
+        </ListItem>
       </List>
       <Link href="https://api.whatsapp.com/send?phone=254740248823" passHref>
-                <a target="_blank">
-      <Box>
-        <MuiButton variant="contained" text="SCHEDULE A DEMO" height={36} />
-      </Box>
-      </a>
+        <a target="_blank">
+          <Box>
+            <MuiButton variant="contained" text="SCHEDULE A DEMO" height={36} />
+          </Box>
+        </a>
       </Link>
     </Box>
   );
@@ -156,57 +199,84 @@ export default function AppHeader({
                     <Typography
                       sx={{ marginRight: theme.spacing(2), cursor: "pointer" }}
                       variant="body1"
-                      onClick={() =>
+                      onClick={() => {
+                        if (pathname === "/gallery") {
+                          router.push("/");
+                          return false;
+                        }
                         aboutRef.current.scrollIntoView({
                           behavior: "smooth",
-                        })
-                      }
+                        });
+                      }}
                     >
                       About Us
                     </Typography>
                     <Typography
                       sx={{ marginRight: theme.spacing(2), cursor: "pointer" }}
                       variant="body1"
-                      onClick={() =>
+                      onClick={() => {
+                        if (pathname === "/gallery") {
+                          router.push("/");
+                          return false;
+                        }
                         curriculumRef.current.scrollIntoView({
                           behavior: "smooth",
-                        })
-                      }
+                        });
+                      }}
                     >
                       Our Curriculum
                     </Typography>
                     <Typography
                       sx={{ marginRight: theme.spacing(2), cursor: "pointer" }}
                       variant="body1"
-                      onClick={() =>
+                      onClick={() => {
+                        if (pathname === "/gallery") {
+                          router.push("/");
+                          return false;
+                        }
                         coursesRef.current.scrollIntoView({
                           behavior: "smooth",
-                        })
-                      }
+                        });
+                      }}
                     >
                       Our Products & Courses
                     </Typography>
                     <Typography
                       sx={{ marginRight: theme.spacing(2), cursor: "pointer" }}
                       variant="body1"
-                      onClick={() =>
+                      onClick={() => {
+                        if (pathname === "/gallery") {
+                          router.push("/");
+                          return false;
+                        }
                         teamRef.current.scrollIntoView({
                           behavior: "smooth",
-                        })
-                      }
+                        });
+                      }}
                     >
                       Our Team
                     </Typography>
-                    <Typography
-                      sx={{ marginRight: theme.spacing(2), cursor: "pointer" }}
-                      variant="body1"
-                    >
-                      Gallery
-                    </Typography>
+                    <Link href="/gallery" prefetch={false}>
+                      <a>
+                        <Typography
+                          sx={{
+                            marginRight: theme.spacing(2),
+                            cursor: "pointer",
+                          }}
+                          variant="body1"
+                        >
+                          Gallery
+                        </Typography>
+                      </a>
+                    </Link>
                     <Typography
                       sx={{ marginRight: theme.spacing(2), cursor: "pointer" }}
                       variant="body1"
                       onClick={() => {
+                        if (pathname === "/gallery") {
+                          router.push("/");
+                          return false;
+                        }
                         contactRef.current.scrollIntoView({
                           behavior: "smooth",
                         });
@@ -216,16 +286,19 @@ export default function AppHeader({
                     </Typography>
                   </Grid>
                 </Box>
-                <Link href="https://api.whatsapp.com/send?phone=254740248823" passHref>
-                <a target="_blank">
-                <Box>
-                  <MuiButton
-                    variant="contained"
-                    text="SCHEDULE A DEMO"
-                    height={36}
-                  />
-                </Box>
-                </a>
+                <Link
+                  href="https://api.whatsapp.com/send?phone=254740248823"
+                  passHref
+                >
+                  <a target="_blank">
+                    <Box>
+                      <MuiButton
+                        variant="contained"
+                        text="SCHEDULE A DEMO"
+                        height={36}
+                      />
+                    </Box>
+                  </a>
                 </Link>
               </>
             )}

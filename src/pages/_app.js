@@ -16,6 +16,12 @@ function MyApp({ Component, pageProps }) {
   const [devLoaded, setDevLoaded] = React.useState(false);
   const location = useRouter();
   const theme = useTheme();
+  const heroRef = React.useRef(null);
+  const aboutRef = React.useRef(null);
+  const curriculumRef = React.useRef(null);
+  const coursesRef = React.useRef(null);
+  const teamRef = React.useRef(null);
+  const contactRef = React.useRef(null);
   const isMobileTablet = useMediaQuery(theme.breakpoints.down("md"));
   const isLargeScreen = useMediaQuery(
     json2mq({
@@ -55,6 +61,12 @@ function MyApp({ Component, pageProps }) {
               {...pageProps}
               isMobileTablet={isMobileTablet}
               isLargeScreen={isLargeScreen}
+              contactRef={contactRef}
+              aboutRef={aboutRef}
+              curriculumRef={curriculumRef}
+              coursesRef={coursesRef}
+              teamRef={teamRef}
+              heroRef={heroRef}
             />
           </ThemeProvider>
         </StyledEngineProvider>
