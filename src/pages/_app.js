@@ -42,7 +42,7 @@ function MyApp({ Component, pageProps }) {
       setDevLoaded(true);
     }
   }, [asPath, devLoaded]);
-  if (process.env.NEXT_PUBLIC_ENVIRONMENT === "dev" && !devLoaded) {
+  if ((process.env.NEXT_PUBLIC_ENVIRONMENT === "dev" || process.env.NODE_ENV === "production") && !devLoaded) {
     return null;
   }
   return (
