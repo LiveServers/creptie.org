@@ -22,7 +22,7 @@ const HeroSection = ({ isLargeScreen, isMobileTablet, heroRef, aboutRef }) => {
     <Grid
       ref={heroRef}
       sx={{
-        backgroundColor: theme.palette.primary.light,
+        backgroundColor: theme.palette.primary.bgColor,
         paddingTop:
           !isMobileTablet && !isLargeScreen ? "2%" : isLargeScreen && "4%",
         paddingLeft: isLargeScreen && "5%",
@@ -41,7 +41,7 @@ const HeroSection = ({ isLargeScreen, isMobileTablet, heroRef, aboutRef }) => {
           padding: "40px 24px",
           gridGap: "2%",
           marginTop: theme.spacing(6),
-          backgroundColor: theme.palette.primary.light,
+          backgroundColor: theme.palette.primary.bgColor,
         }}
       >
         <Grid
@@ -61,7 +61,7 @@ const HeroSection = ({ isLargeScreen, isMobileTablet, heroRef, aboutRef }) => {
             <Typography
               component="span"
               variant="h3"
-              sx={{ color: theme.palette.primary.main }}
+              sx={{ color: theme.palette.primary.btn }}
             >
               CREPTIE.ORG
             </Typography>{" "}
@@ -92,7 +92,7 @@ const HeroSection = ({ isLargeScreen, isMobileTablet, heroRef, aboutRef }) => {
                   text="SCHEDULE A DEMO"
                   sx={{
                     color: theme.palette.grey[0],
-                    backgroundColor: theme.palette.secondary.main,
+                    backgroundColor: theme.palette.primary.btn,
                   }}
                 />
               </Box>

@@ -19,6 +19,7 @@ import IconButton from "@mui/material/IconButton";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import MuiButton from "../components/Button";
+import ImageOverride from "../components/Image";
 
 export default function AppHeader({
   isMobileTablet,
@@ -39,13 +40,13 @@ export default function AppHeader({
   };
   const drawer = (
     <Box sx={{ textAlign: "center" }}>
-      <Typography
-        variant="h6"
-        component="div"
-        sx={{ flexGrow: 1, color: theme.palette.primary.main, my: 2 }}
-      >
-        CREPTIE.ORG
-      </Typography>
+      <img
+        alt="Creptie Logo"
+        height={50}
+        width={100}
+        src="/images/logo/creptielogo.jpg"
+        style={{ objectFit: "fill", objectPosistion: "center center" }}
+      />
       <Divider />
       <List>
         <ListItem
@@ -54,9 +55,7 @@ export default function AppHeader({
               router.push("/");
               return false;
             }
-            aboutRef.current.scrollIntoView({
-              behavior: "smooth",
-            });
+            aboutRef.current.scrollIntoView();
             handleDrawerToggle();
           }}
           disablePadding
@@ -71,9 +70,7 @@ export default function AppHeader({
               router.push("/");
               return false;
             }
-            curriculumRef.current.scrollIntoView({
-              behavior: "smooth",
-            });
+            curriculumRef.current.scrollIntoView();
             handleDrawerToggle();
           }}
           disablePadding
@@ -88,9 +85,7 @@ export default function AppHeader({
               router.push("/");
               return false;
             }
-            coursesRef.current.scrollIntoView({
-              behavior: "smooth",
-            });
+            coursesRef.current.scrollIntoView();
             handleDrawerToggle();
           }}
           disablePadding
@@ -105,9 +100,7 @@ export default function AppHeader({
               router.push("/");
               return false;
             }
-            teamRef.current.scrollIntoView({
-              behavior: "smooth",
-            });
+            teamRef.current.scrollIntoView();
             handleDrawerToggle();
           }}
           disablePadding
@@ -131,9 +124,7 @@ export default function AppHeader({
               router.push("/");
               return false;
             }
-            contactRef.current.scrollIntoView({
-              behavior: "smooth",
-            });
+            contactRef.current.scrollIntoView();
             handleDrawerToggle();
           }}
           disablePadding
@@ -146,7 +137,12 @@ export default function AppHeader({
       <Link href="https://api.whatsapp.com/send?phone=254740248823" passHref>
         <a target="_blank">
           <Box>
-            <MuiButton variant="contained" text="SCHEDULE A DEMO" height={36} />
+            <MuiButton
+              variant="contained"
+              text="SCHEDULE A DEMO"
+              height={36}
+              sx={{ backgroundColor: theme.palette.primary.btn }}
+            />
           </Box>
         </a>
       </Link>
@@ -178,13 +174,13 @@ export default function AppHeader({
             direction="row"
           >
             <Box>
-              <Typography
-                variant="h6"
-                component="div"
-                sx={{ flexGrow: 1, color: theme.palette.primary.main }}
-              >
-                CREPTIE.ORG
-              </Typography>
+              <img
+                alt="Creptie Logo"
+                height={50}
+                width={100}
+                src="/images/logo/creptielogo.jpg"
+                style={{ objectFit: "fill", objectPosistion: "center center" }}
+              />
             </Box>
             {!isMobileTablet && (
               <>
@@ -296,6 +292,10 @@ export default function AppHeader({
                         variant="contained"
                         text="SCHEDULE A DEMO"
                         height={36}
+                        sx={{
+                          color: theme.palette.grey[0],
+                          backgroundColor: theme.palette.primary.btn,
+                        }}
                       />
                     </Box>
                   </a>

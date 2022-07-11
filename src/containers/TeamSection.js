@@ -11,30 +11,36 @@ const TeamSection = ({ isMobileTablet, teamRef }) => {
   const teamDataOne = [
     {
       name: "Annette Mwende",
-      role: "Chief Executive Officer.",
-      src: "/images/man.jpg",
-      alt: "image of founder",
+      role: "Founder & CEO",
+      src: "/images/team/Annette.jpg",
+      alt: "image of Annette Mwende,CEO",
     },
     {
-      name: "Lovingtone Mulika",
-      role: "Chief Financial Officer",
-      src: "/images/man.jpg",
-      alt: "image of chief financial officer",
+      name: "Polycarp Kavoo",
+      role: "Co-Founder & CTO",
+      src: "/images/team/Poly.jpg",
+      alt: "image of Polycarp Kavoo, CTO",
     },
   ];
 
   const teamDataTwo = [
     {
-      name: "Charity Museo",
-      role: "Lead Trainer Middle School.",
-      src: "/images/man.jpg",
-      alt: "image of Trainer Middle School.",
+      name: "Elsy Ntinyari",
+      role: "Trainer",
+      src: "/images/team/Elsy.jpg",
+      alt: "image of Elsy Ntinyari",
     },
     {
-      name: "Mary Wanjiru",
-      role: "Trainer Junior School",
-      src: "/images/man.jpg",
-      alt: "image of Trainer, Junior School",
+      name: "Melissa Kirwa",
+      role: "Trainer",
+      src: "/images/team/Melissa.jpg",
+      alt: "image of Melissa Kirwa",
+    },
+    {
+      name: "Willy Wairagu",
+      role: "Trainer",
+      src: "/images/team/Willy passport.jpg",
+      alt: "image of Willy Wairagu",
     },
   ];
 
@@ -61,7 +67,7 @@ const TeamSection = ({ isMobileTablet, teamRef }) => {
         MEET THE TEAM BEHIND
         <Typography
           sx={{
-            color: theme.palette.primary.main,
+            color: theme.palette.primary.bgColor,
             marginLeft: theme.spacing(1),
           }}
           variant="h4"

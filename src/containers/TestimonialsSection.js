@@ -54,7 +54,7 @@ const TestimonialsSection = () => {
           WHAT PEOPLE SAY ABOUT
           <Typography
             sx={{
-              color: theme.palette.primary.main,
+              color: theme.palette.primary.bgColor,
               marginLeft: theme.spacing(1),
             }}
             variant="h4"

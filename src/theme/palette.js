@@ -34,6 +34,8 @@ const PRIMARY = {
   main: "#2E56A0",
   dark: "#716EEA",
   lighter: "#2F91C8",
+  bgColor: "#0225d6",
+  btn: "#f5ce42",
 };
 const SECONDARY = {
   main: "#CCA300",

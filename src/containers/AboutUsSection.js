@@ -110,7 +110,10 @@ const AboutUsSection = ({ isMobileTablet, aboutRef }) => {
                       >
                         {title}
                       </Typography>
-                      <Typography variant="body1" sx={{ textAlign: "center" }}>
+                      <Typography
+                        variant="body1"
+                        sx={{ textAlign: "center", padding: "0 16px 0 16px" }}
+                      >
                         {message}
                       </Typography>
                     </Grid>
@@ -154,7 +157,7 @@ const AboutUsSection = ({ isMobileTablet, aboutRef }) => {
                   <Typography
                     sx={{
                       textDecoration: "underline",
-                      textDecorationColor: theme.palette.secondary.main,
+                      textDecorationColor: theme.palette.primary.btn,
                       textDecorationThickness: "3px",
                       textUnderlinePosition: "under",
                       fontWeight: 600,
@@ -198,7 +201,7 @@ const AboutUsSection = ({ isMobileTablet, aboutRef }) => {
                   <Typography
                     sx={{
                       textDecoration: "underline",
-                      textDecorationColor: theme.palette.secondary.main,
+                      textDecorationColor: theme.palette.primary.btn,
                       textDecorationThickness: "3px",
                       textUnderlinePosition: "under",
                       fontWeight: 600,
@@ -266,7 +269,7 @@ const AboutUsSection = ({ isMobileTablet, aboutRef }) => {
                     component="span"
                     sx={{
                       textDecoration: "underline",
-                      textDecorationColor: theme.palette.secondary.main,
+                      textDecorationColor: theme.palette.primary.btn,
                       textDecorationThickness: "3px",
                       textUnderlinePosition: "under",
                       fontWeight: 600,
@@ -293,6 +296,9 @@ const AboutUsSection = ({ isMobileTablet, aboutRef }) => {
               size="large"
               variant="contained"
               text="SCHEDULE A DEMO"
+              sx={{
+                backgroundColor: theme.palette.primary.btn,
+              }}
             />
           </Box>
         </a>

@@ -53,7 +53,7 @@ const ContactSection = ({ isMobileTablet, contactRef }) => {
           <Typography
             sx={{
               textAlign: "center",
-              color: theme.palette.secondary.main,
+              color: theme.palette.primary.btn,
               fonWeight: 600,
             }}
             variant="subtitle2"
@@ -79,7 +79,7 @@ const ContactSection = ({ isMobileTablet, contactRef }) => {
           <Typography
             sx={{
               textAlign: "center",
-              color: theme.palette.secondary.main,
+              color: theme.palette.primary.btn,
               fonWeight: 600,
             }}
             variant="subtitle2"

@@ -20,7 +20,7 @@ const CourseCard = ({
       sx={{
         maxWidth: 250,
         width: 250,
-        minHeight: 304,
+        maxHeight: 304,
         height: 304,
         backgroundColor: theme.palette.grey[800],
         margin: theme.spacing(4),
@@ -39,7 +39,12 @@ const CourseCard = ({
         }}
       >
         <Typography
-          sx={{ textAlign: "center", color, alignSelf: "center" }}
+          sx={{
+            textAlign: "center",
+            color,
+            alignSelf: "center",
+            padding: `0 ${theme.spacing(2)} 0 ${theme.spacing(2)}`,
+          }}
           variant="h6"
         >
           {headerText}
@@ -50,7 +55,8 @@ const CourseCard = ({
           sx={{
             textAlign: "center",
             backgroundColor: theme.palette.grey[800],
-            padding: "30px 20px",
+            padding: "10px 20px",
+            fontSize: "13px",
           }}
           variant="body1"
         >

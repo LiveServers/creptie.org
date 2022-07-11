@@ -41,7 +41,7 @@ const Home = ({
       />
       <AboutUsSection aboutRef={aboutRef} isMobileTablet={isMobileTablet} />
       <CurriculumSection curriculumRef={curriculumRef} />
-      <CoursesSection coursesRef={coursesRef} />
+      <CoursesSection isMobileTablet={isMobileTablet} coursesRef={coursesRef} />
       <ProgrammingToolsSection />
       <PatnersSection />
       <TeamSection teamRef={teamRef} isMobileTablet={isMobileTablet} />

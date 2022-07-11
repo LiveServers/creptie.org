@@ -3,9 +3,36 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { useTheme } from "@mui/material/styles";
+import { nanoid } from "nanoid";
 
 const ProgrammingToolsSection = () => {
   const theme = useTheme();
+  const toolsArray = [
+    {
+      img: "/images/tools/CSS-HTML.svg",
+      alt: "CSS HTML Icon",
+    },
+    {
+      img: "/images/tools/js.svg",
+      alt: "Javascript Icon",
+    },
+    {
+      img: "/images/tools/microbit.svg",
+      alt: "Microbit Icon",
+    },
+    {
+      img: "/images/tools/python.svg",
+      alt: "Python Icon",
+    },
+    {
+      img: "/images/tools/wonder.svg",
+      alt: "Wonder Icon",
+    },
+    {
+      img: "/images/tools/Minecraft_logo.png",
+      alt: "Minecraft Icon",
+    },
+  ];
   return (
     <Grid
       sx={{
@@ -27,7 +54,10 @@ const ProgrammingToolsSection = () => {
           width: "70%",
         }}
       >
-        <Typography sx={{ marginTop: theme.spacing(2), textAlign: "center" }} variant="h4">
+        <Typography
+          sx={{ marginTop: theme.spacing(2), textAlign: "center" }}
+          variant="h4"
+        >
           A LIST OF PROGRAMMING TOOLS USED
         </Typography>
         <Typography
@@ -49,51 +79,17 @@ const ProgrammingToolsSection = () => {
           justifyContent="center"
           sx={{ marginTop: theme.spacing(4) }}
         >
-          <Box sx={{ padding: theme.spacing(3) }}>
-            {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
-            <img
-              src="/images/CSS-HTML.svg"
-              alt="image of html and css languages"
-              width={200}
-              height={55}
-            />
-          </Box>
-          <Box sx={{ padding: theme.spacing(3) }}>
-            {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
-            <img
-              src="/images/js.svg"
-              alt="image of javascript languages"
-              width={200}
-              height={55}
-            />
-          </Box>
-          <Box sx={{ padding: theme.spacing(3) }}>
-            {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
-            <img
-              src="/images/microbit.svg"
-              alt="image of microbit languages"
-              width={200}
-              height={55}
-            />
-          </Box>
-          <Box sx={{ padding: theme.spacing(3) }}>
-            {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
-            <img
-              src="/images/python.svg"
-              alt="image of python languages"
-              width={200}
-              height={55}
-            />
-          </Box>
-          <Box sx={{ padding: theme.spacing(3) }}>
-            {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
-            <img
-              src="/images/wonder.svg"
-              alt="image of wonder workshop languages"
-              width={200}
-              height={55}
-            />
-          </Box>
+          {toolsArray &&
+            Array.isArray(toolsArray) &&
+            toolsArray.length > 0 &&
+            toolsArray.map((item) => (
+              <React.Fragment key={nanoid()}>
+                <Box sx={{ padding: theme.spacing(3) }}>
+                  {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
+                  <img src={item.img} alt={item.alt} width={200} height={60} />
+                </Box>
+              </React.Fragment>
+            ))}
         </Grid>
       </Box>
     </Grid>

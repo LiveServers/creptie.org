@@ -12,7 +12,7 @@ const TeamCard = ({ src, alt, name, role, index, isMobileTablet }) => {
     <Card
       sx={{
         maxWidth: 300,
-        marginRight: index !== 1 && !isMobileTablet && theme.spacing(4),
+        marginRight: index !== 2 && !isMobileTablet && theme.spacing(4),
         height: 280,
       }}
     >
@@ -28,7 +28,7 @@ const TeamCard = ({ src, alt, name, role, index, isMobileTablet }) => {
         <Typography
           sx={{ textAlign: "center" }}
           variant="body1"
-          color={theme.palette.secondary.main}
+          color={theme.palette.primary.btn}
         >
           {role}
         </Typography>

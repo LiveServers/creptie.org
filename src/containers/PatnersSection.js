@@ -3,9 +3,36 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { useTheme } from "@mui/material/styles";
+import { nanoid } from "nanoid";
 
 const PatnersSection = () => {
   const theme = useTheme();
+  const patnersArray = [
+    {
+      img: "/images/patners/CS-first-logo.jpg",
+      alt: "Cs First Logo",
+    },
+    {
+      img: "/images/patners/hour-of-code-logo.jpg",
+      alt: "Hour Of Code Logo",
+    },
+    {
+      img: "/images/patners/makini-school-logo.webp",
+      alt: "Makini School Logo",
+    },
+    {
+      img: "/images/patners/MIT-logo.jpg",
+      alt: "MIT Logo",
+    },
+    {
+      img: "/images/patners/scratch-logo.jpg",
+      alt: "Scratch Logo",
+    },
+    {
+      img: "/images/patners/tynker-byjus-logo.jpg",
+      alt: "Tynker Byjus Logo",
+    },
+  ];
   return (
     <Grid
       container
@@ -33,7 +60,7 @@ const PatnersSection = () => {
           PEOPLE WHO BELIEVE IN{" "}
           <Typography
             sx={{
-              color: theme.palette.primary.main,
+              color: theme.palette.primary.bgColor,
               marginLeft: theme.spacing(1),
             }}
             variant="h4"
@@ -49,33 +76,17 @@ const PatnersSection = () => {
           justifyContent="center"
           sx={{ marginTop: theme.spacing(4) }}
         >
-          <Box sx={{ padding: theme.spacing(3) }}>
-            {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
-            <img
-              src="/images/CSS-HTML.svg"
-              alt="image of html and css languages"
-              width={200}
-              height={55}
-            />
-          </Box>
-          <Box sx={{ padding: theme.spacing(3) }}>
-            {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
-            <img
-              src="/images/js.svg"
-              alt="image of javascript languages"
-              width={200}
-              height={55}
-            />
-          </Box>
-          <Box sx={{ padding: theme.spacing(3) }}>
-            {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
-            <img
-              src="/images/microbit.svg"
-              alt="image of microbit languages"
-              width={200}
-              height={55}
-            />
-          </Box>
+          {patnersArray &&
+            Array.isArray(patnersArray) &&
+            patnersArray.length > 0 &&
+            patnersArray.map((item) => (
+              <React.Fragment key={nanoid()}>
+                <Box sx={{ padding: theme.spacing(3) }}>
+                  {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
+                  <img src={item.img} alt={item.alt} width={200} height={60} />
+                </Box>
+              </React.Fragment>
+            ))}
         </Grid>
       </Box>
     </Grid>
