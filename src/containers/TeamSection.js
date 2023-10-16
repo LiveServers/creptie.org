@@ -15,12 +15,12 @@ const TeamSection = ({ isMobileTablet, teamRef }) => {
       src: "/images/team/Annette.jpg",
       alt: "image of Annette Mwende,CEO",
     },
-    {
-      name: "Polycarp Kavoo",
-      role: "Co-Founder & CTO",
-      src: "/images/team/Poly.jpg",
-      alt: "image of Polycarp Kavoo, CTO",
-    },
+    // {
+    //   name: "Polycarp Kavoo",
+    //   role: "Co-Founder & CTO",
+    //   src: "/images/team/Poly.jpg",
+    //   alt: "image of Polycarp Kavoo, CTO",
+    // },
   ];
 
   const teamDataTwo = [
